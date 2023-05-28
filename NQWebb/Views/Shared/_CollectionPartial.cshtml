@@ -1,0 +1,21 @@
+﻿@model CollectionVM
+
+<div class="container text-center">
+    <div class="my-5">
+        <h1 class="display-4 text-uppercase text-primary mb-4">@Model.Title</h1>
+        <div class="row justify-content-center">
+            @foreach (var item in Model.Items)
+            {
+                <div class="col-lg-4 col-md-6 my-3">
+                    <div class="card shadow">
+                        <img class="card-img-top" src="~/images/products/@item.ImageUrl" alt="@item.ProductName">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.ProductName</h5>
+                            <a class="btn btn-primary" asp-action="Details" asp-controller="Products" asp-route-articleNumber="@item.ArticleNumber">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

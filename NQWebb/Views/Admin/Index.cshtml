@@ -1,0 +1,15 @@
+﻿@model UsersVM
+@{
+    ViewData["Title"] = "Admin";
+}
+<h3>Users</h3>
+
+@foreach (var user in Model.Users)
+{
+    <div>@user.Email</div>
+}
+<h3>Admin</h3>
+@foreach (var admin in Model.Administrators)
+{
+    <div>@admin.Email</div>
+}

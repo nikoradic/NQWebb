@@ -1,0 +1,13 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Home ";
+}
+
+@*<partial name="_CollectionPartial" model="@Model.BestCollection"/>*@
+@foreach( var collection in Model.Collection){
+  <h2> @collection.Title</h2>
+    @foreach(var product in collection.Items)
+    {
+        <partial name="_Product" model="product" />
+    }
+}
